@@ -1,0 +1,30 @@
+<section class="page-section about-heading">
+    <div class="container">
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="assets/img/about.jpg" alt="..." />
+        <div class="about-heading-content">
+            <div class="row">
+                <div class="col-xl-9 col-lg-10 mx-auto">
+                    <div class="bg-faded rounded p-5">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper">Compassionate Care, Healthy Pets</span>
+                            <span class="section-heading-lower">About Animus Sanitas Veterinary Clinic</span>
+                        </h2>
+                        <p class="mb-0">
+                            <strong>Address:</strong>123 Pet Haven Street, Angeles City, Pampanga, Philippines<br/>
+                            <strong>Phone:</strong>(+63) 912-345-6789<br/>
+                            <strong>Email:</strong>AnimusSanitas@example.com<br/><br>
+                        </p>
+                        <!-- Event handling using button(click) -->
+                        <p *ngIf="!showParagraphs">Founded in 1987 with a passion for animal well-being, Animus Sanitas Veterinary Clinic has been providing compassionate care for pets. Our commitment extends to sourcing the best practices in veterinary medicine to ensure the health and happiness of your furry friends.</p>
+                        <p *ngIf="!showParagraphs">
+                            We guarantee that you will experience the utmost care and professionalism from our dedicated team of veterinarians. Whether it's a routine check-up, medical treatment, or simply a visit for preventive care, Animus Sanitas is here to foster the well-being of your beloved pets.
+                        </p>
+                        <button (click)="toggleParagraphs()" [class.active]="showParagraphs">
+                            {{ showParagraphs ? 'View More' : 'Hide' }}
+                        </button>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

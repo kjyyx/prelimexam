@@ -1,0 +1,16 @@
+/* join.component.css */
+
+button.active {
+    background-color: #8B4513;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.active:hover {
+    background-color: #A0522D;
+}

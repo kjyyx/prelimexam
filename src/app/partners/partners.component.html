@@ -1,0 +1,29 @@
+<!-- Directive using *ngFor, *ngClass-->
+<section class="page-section" *ngFor="let partner of veterinaryPartners">
+    <div class="container">
+        <div class="product-item">
+            <div class="product-item-title d-flex">
+                <div class="bg-faded p-5 d-flex ms-auto rounded">
+                    <h2 class="section-heading mb-0">
+                        <span class="section-heading-upper">Best Veterinary Partners</span>
+                        <span class="section-heading-lower">{{ partner.name }}</span>
+                    </h2>
+                </div>
+            </div>
+            <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" [src]="partner.imageSrc" alt="..." />
+            <div class="product-item-description d-flex" [ngClass]="{'me-auto': partner.alignment === 'right', 'ms-auto': partner.alignment === 'left'}">
+                <div class="bg-faded p-5 rounded">
+                    <p class="mb-0">
+                        {{ partner.description }}
+                    </p>
+                    <p class="mb-0">
+                        <strong>Address:</strong> {{ partner.address }}<br/>
+                        <strong>Phone:</strong> {{ partner.phone }}<br/>
+                        <strong>Email:</strong> {{ partner.email }}<br/>
+                        <strong>Website:</strong> <a [href]="partner.website" target="_blank">Visit Website</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

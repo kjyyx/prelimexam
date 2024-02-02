@@ -1,0 +1,144 @@
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner bg-faded text-center rounded">
+                    <h2 class="section-heading mb-5">
+                        <span class="section-heading-upper">Bring Your Pet</span>
+                        <span class="section-heading-lower">We're Open</span>
+                    </h2>
+                    <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+                        <li class="list-unstyled-item list-hours-item d-flex">
+                            Sunday
+                            <span class="ms-auto">Closed</span>
+                        </li>
+                        <li class="list-unstyled-item list-hours-item d-flex">
+                            Monday
+                            <span class="ms-auto">7:00 AM to 8:00 PM</span>
+                        </li>
+                        <li class="list-unstyled-item list-hours-item d-flex">
+                            Tuesday
+                            <span class="ms-auto">7:00 AM to 8:00 PM</span>
+                        </li>
+                        <li class="list-unstyled-item list-hours-item d-flex">
+                            Wednesday
+                            <span class="ms-auto">7:00 AM to 8:00 PM</span>
+                        </li>
+                        <li class="list-unstyled-item list-hours-item d-flex">
+                            Thursday
+                            <span class="ms-auto">7:00 AM to 8:00 PM</span>
+                        </li>
+                        <li class="list-unstyled-item list-hours-item d-flex">
+                            Friday
+                            <span class="ms-auto">7:00 AM to 8:00 PM</span>
+                        </li>
+                        <li class="list-unstyled-item list-hours-item d-flex">
+                            Saturday
+                            <span class="ms-auto">9:00 AM to 5:00 PM</span>
+                        </li>
+                    </ul>
+                    <p class="address mb-5">
+                        <em>
+                            <strong>1116 Pet Care Avenue</strong>
+                            <br />
+                            Golden Valley, Minnesota
+                        </em>
+                    </p>
+                    <p class="mb-0">
+                        <small><em>Call Anytime</em></small>
+                        <br />
+                        (317) 585-8468
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</section>
+
+<section class="page-section appointment">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="section-heading text-center mb-5">
+                    <span class="section-heading-upper">Schedule an Appointment</span>
+                    <span class="section-heading-lower">We're Here to Help Your Pet</span>
+                </h2>
+                <!-- Two-way data binding using [(ngModel)] -->
+                <form #appointmentForm="ngForm" (ngSubmit)="submitForm()">
+                    <div class="mb-3">
+                        <label for="petName" class="form-label">Pet's Name</label>
+                        <input type="text" class="form-control" id="petName" name="petName" [(ngModel)]="petName"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ownerName" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="ownerName" name="ownerName" [(ngModel)]="ownerName"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" [(ngModel)]="phone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="appointmentDate" class="form-label">Preferred Date</label>
+                        <input type="date" class="form-control" id="appointmentDate" name="appointmentDate"
+                            [(ngModel)]="appointmentDate" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="appointmentTime" class="form-label">Preferred Time</label>
+                        <input type="time" class="form-control" id="appointmentTime" name="appointmentTime"
+                            [(ngModel)]="appointmentTime" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="additionalInfo" class="form-label">Additional Information</label>
+                        <textarea class="form-control" id="additionalInfo" name="additionalInfo" rows="4"
+                            [(ngModel)]="additionalInfo"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-xl">Submit Appointment Request</button>
+                    </div>
+                </form>
+
+                <!-- Display entered details -->
+                <div *ngIf="submitted" class="entered-details">
+                    <h2 class="section-heading text-center mb-5">
+                        <span class="section-heading-upper">Animus Sanitas</span>
+                        <span class="section-heading-lower">Appointment Confirmed!</span>
+                    </h2>
+                    <div class="detail-item">
+                        <strong>Pet's Name:</strong> {{ petName }}
+                    </div>
+                    <div class="detail-item">
+                        <strong>Your Name:</strong> {{ ownerName }}
+                    </div>
+                    <div class="detail-item">
+                        <strong>Email:</strong> {{ email }}
+                    </div>
+                    <div class="detail-item">
+                        <strong>Phone Number:</strong> {{ phone }}
+                    </div>
+                    <div class="detail-item">
+                        <strong>Preferred Date:</strong> {{ appointmentDate }}
+                    </div>
+                    <div class="detail-item">
+                        <strong>Preferred Time:</strong> {{ appointmentTime }}
+                    </div>
+                    <div class="detail-item">
+                        <strong>Additional Information:</strong> {{ additionalInfo }}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- input type="text" [value]="clientName"/> -->
